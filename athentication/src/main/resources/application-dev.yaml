@@ -1,0 +1,53 @@
+#database connection
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/authapp
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+#jpa configration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:  ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+
+
+#forgot pass
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
+
+
+
+#jwt
+jwt:
+  secret: ${JWT_SECRET}
+  issuer: athentication
+  expiry-access-token: 3600
+  expire-refrash-token: 6000
+  refrash-token-cookie-name: RefrashToken
+  cookie-secure: true
+  cookie-http-only: true
+  cookie-same-site: lax
