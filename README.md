@@ -1,4 +1,4 @@
-# Spring Boot Authentication System
+# SecureGate
 
 A secure authentication and authorization backend built using **Java, Spring Boot, Spring Security, and JWT**. This project provides user registration, login, token-based authentication, Google OAuth2 login, password recovery, and role-based authorization.
 
